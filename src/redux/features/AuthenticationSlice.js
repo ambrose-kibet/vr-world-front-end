@@ -101,8 +101,10 @@ const authSlice = createSlice({
           user: payload.status.data,
           isLoading: false,
           tempUser: {
-            email: '',
-            password: '',
+              username: '',
+              email: '',
+              password: '',
+              confirmPassword: '',
           },
         };
       })
@@ -145,7 +147,7 @@ const authSlice = createSlice({
         ...state,
         isLoading: false,
         tempUser: {
-          username: '',
+          ...state.tempuser, username: '',
           confirmPassword: '',
         },
       }))
